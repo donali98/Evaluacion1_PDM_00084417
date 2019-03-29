@@ -1,16 +1,25 @@
 package com.example.evaluacion1_pdm_00084417;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9,lbl10;
+    TextView lbl1,lbl2,lbl3,lbl4,lbl5,lbl6,lbl7,lbl8,lbl9;
+    EditText txtUsuario, txtCorreo;
+    String usuario,correo;
     int c1,c2,c3,c4,c5,c6,c7,c8,c9;
+    Button btnSend;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lbl7 = findViewById(R.id.lblPro7);
         lbl8 = findViewById(R.id.lblPro8);
         lbl9 = findViewById(R.id.lblPro9);
+        btnSend = findViewById(R.id.btnEnviar);
+        txtUsuario = findViewById(R.id.txtUsuario);
+        txtCorreo = findViewById(R.id.txtCorreo);
 
         lbl1.setText(lbl1.getText()+"\n"+c1);
         lbl2.setText(lbl2.getText()+"\n"+c2);
@@ -54,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lbl7.setOnClickListener(this);
         lbl8.setOnClickListener(this);
         lbl9.setOnClickListener(this);
+        btnSend.setOnClickListener(this);
 
     }
 
@@ -96,6 +109,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.lblPro9:
                 c9++;
                 lbl9.setText("Producto 9\n"+c9);
+            break;
+            case R.id.btnEnviar:
+                correo = txtCorreo.getText().toString();
+                usuario = txtUsuario.getText().toString();
+
+                Intent i = new Intent(MainActivity.this,SecondActivity.class);
+
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    int sumato = c1+c2+c3+c4+c5+c6+c7+c8+c9;
+                    jsonObject.put("p1",c1);
+                    jsonObject.put("p2",c2);
+                    jsonObject.put("p3",c3);
+                    jsonObject.put("p4",c4);
+                    jsonObject.put("p5",c5);
+                    jsonObject.put("p6",c6);
+                    jsonObject.put("p7",c7);
+                    jsonObject.put("p8",c8);
+                    jsonObject.put("p9",c9);
+                    jsonObject.put("correo", correo);
+                    jsonObject.put("usuario", usuario);
+                    jsonObject.put("sumato", sumato);
+
+                    i.putExtra("info",jsonObject.toString());
+                    startActivity(i);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
             break;
         }
     }
