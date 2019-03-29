@@ -1,18 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.03">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_contador"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.01"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/lblPro1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"
+            android:layout_marginRight="15dp"/>
+        <TextView
+            android:id="@+id/lblPro2"
+            android:gravity="center"
+            android:layout_gravity="center"
 
-</android.support.constraint.ConstraintLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:layout_marginRight="15dp"
+            android:background="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/lblPro3"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/lblPro4"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"
+            android:layout_marginRight="15dp"/>
+        <TextView
+            android:id="@+id/lblPro5"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:layout_marginRight="15dp"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/lblPro6"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/lblPro7"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"
+
+            android:layout_marginRight="15dp"/>
+        <TextView
+            android:id="@+id/lblPro8"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:layout_marginRight="15dp"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/lblPro9"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/txt_producto_1"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usuario"/>
+        <EditText
+            android:id="@+id/txtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escriba el usuario aqui" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo Electronico"/>
+        <EditText
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escriba el correo aqui" />
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enviar"/>
+    </LinearLayout>
+
+</LinearLayout>
